@@ -1,19 +1,26 @@
 # ContainerHowTo
 a simple example walk thru of how to create a service and use containers on podman and kubernetes
 
-## Description of Chapters
-this project is broken down into chapters of increasing complexity.  To start this howto, switch to the
-first chapter branch in the repo with:
-```
-git switch chap-1
-```
+## Chapter One
+For this chapter we create a simple service that when we point a web broswer to it will answer with a increasing counter.
 
-## Requirements
-We use:  
- go 1.21  
- podman 5  (5.2.2)  
- RKE2 v1.28.15+rke2r1  
- helm v4.0  
+You can look at the source for the server but you do not need to to understand the demo by editing main.go
 
- For a local container image repo we run the image  
-    docker.io/library/registry:2
+To build:
+```
+cd serv
+go build
+```
+This will make a file called serv.  Lets run it.
+```
+./serv
+```
+Now in a web browser on this same system, goto http://localhost:10100  
+It should look like:
+> serv Test program  
+> 1
+
+## Next Chapter
+```
+git switch chap-2
+```
